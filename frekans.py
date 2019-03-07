@@ -26,4 +26,4 @@ def frekans_tablosu_2(liste_2):
                 frekans_liste.append([liste_2[i],1])#ekleme
     return frekans_liste
         
-print(frekans_tablosu_2(my_list))
+#print(frekans_tablosu_2(my_list))
