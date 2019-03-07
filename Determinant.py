@@ -71,5 +71,5 @@ def det_4_4_hesap(m_1):
     d4=d1*d3
 
     return a4-b4+c4-d4
-print(det_4_4_hesap(matris_4))
+#print(det_4_4_hesap(matris_4))
 
