@@ -1,6 +1,6 @@
-
-
-
+#Olasılık kuramı ve istatistik bilim kollarında, binom dağılımı n sayıda iki kategori sonucu veren denemelere uygulanır.
+#Bu türlü her bir deneyde, bağımsız olarak, başarı olasılığının p olduğu bilinir.
+#170401049
 
 import sympy as sym #gerekli olan kütüphaneler
 from sympy import Symbol,factorial
