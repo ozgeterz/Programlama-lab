@@ -12,6 +12,7 @@
 import sympy as sym 
 from sympy import Symbol #gerekli olan kütüphaneler
 from sympy import pprint
+import matplotlib.pyplot as plt
 
 p,n,x=Symbol('p'),Symbol('n'),Symbol('x') #değişkenler symbol sekline cevrildi
 
