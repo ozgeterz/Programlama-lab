@@ -23,7 +23,7 @@ pprint(my_f)
 x_values=[] #değerleri oluşturduk
 y_values=[]
 for value in range (0,10): #döngü ile 0 ile 10
-    y=my_f.subs({p:0.42,n:8,x:value},title="Binomial Distribution") #p ve n ye değer atandı
+    y=my_f.subs({p:0.42,n:10,x:value},title="Binomial Distribution") #p ve n ye değer atandı
     y_values.append(y) 
     x_values.append(value)
     print(value,y)
