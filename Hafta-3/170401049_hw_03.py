@@ -1,36 +1,32 @@
 
-#Binomal Distribution
-#Olasılık kuramı ve istatistik bilim kollarında, binom dağılımı n sayıda iki kategori sonucu veren denemelere uygulanır.
-#Bu türlü her bir deneyde, bağımsız olarak, başarı olasılığının p olduğu bilinir.
-#170401049 
 
-#Çiftlikten seçilen hayvanın köpek olma olasılığı-> p=0.42=42/100
-#Çiflikteki seçilen hayvanın köpek olma durumu 1, olmama durumu 0 olsun
-# 8 hayvan seçilmesi durumunda oluşacak binom grafiği 
-#n=8
 
-import sympy as sym 
-from sympy import Symbol #gerekli olan kütüphaneler
+
+import sympy as sym #gerekli olan kütüphaneler
+from sympy import Symbol,factorial
 from sympy import pprint
 import matplotlib.pyplot as plt
 
-p,n,x=Symbol('p'),Symbol('n'),Symbol('x') #değişkenler symbol sekline cevrildi
+x,n,p=Symbol("x"),Symbol("n"),Symbol("p")
+part_0=sym.factorial(n)/(sym.factorial(x)*sym.factorial(n-x)) #formülün ilk parçası
+pprint(part_0)
 
-my_func_1=sym.factorial(n)/(sym.factorial(x)*sym.factorial(n-x)) #formüldeki kombinasyon adımı
-my_func_1
-pprint(my_func_1)
+part_1=p**x
+pprint(part_1)
 
-my_func_2=p**x
-my_func_2
-pprint(my_func_2)#fonksiyonun p üzeri x kısmı
+part_2=(1-p)**(n-x) 
+pprint(part_2)
 
-my_func_3=(1-p)**(n-x)
-my_func_3
-pprint(my_func_3)
+my_f=(part_0*part_1*part_2) #formülün partlarını birleştirip oluşturduk
+pprint(my_f)
 
-my_func=my_func_1*my_func_2*my_func_3 #adımları birleştirip gerçek fonksiyonu elde ettik
-my_func #binom dağılımı fonksiyonu
-pprint(my_func)
+x_values=[] #değerleri oluşturduk
+y_values=[]
+for value in range (0,10): #döngü ile 0 ile 10
+    y=my_f.subs({p:0.42,n:8,x:value},title="Binomial Distribution") #p ve n ye değer atandı
+    y_values.append(y) 
+    x_values.append(value)
+    print(value,y)
 
-sym.plot(my_func.subs({p:0.42,n:8}),(x,0,8),title='binomial distribution')
-
+plt.plot(x_values,y_values) 
+plt.show() #grafik çizimi 
